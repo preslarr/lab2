@@ -17,7 +17,7 @@ public class Main {
 	public static void main(String[] args) throws NoSimilarWordFoundException, IOException {
 		
 		String dictionaryFileName = args[0];
-		//String inputWord = args[1];
+		String inputWord = args[1];
 		
 		/**
 		 * Create an instance of your corrector here
@@ -25,11 +25,12 @@ public class Main {
 		ISpellCorrector corrector = new SpellCorrector();
 		
 		corrector.useDictionary(dictionaryFileName);
-		String temp = corrector.toString();
-		System.out.print(corrector.toString());
-		//String suggestion = corrector.suggestSimilarWord(inputWord);
 		
-		//System.out.println("Suggestion is: " + suggestion);
+		//System.out.print(corrector.toString());
+		
+		String suggestion = corrector.suggestSimilarWord(inputWord);
+		
+		System.out.println("Suggestion is: " + suggestion);
 	}
 
 }

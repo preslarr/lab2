@@ -19,19 +19,19 @@ public class Trie implements ITrie {
 	@Override
 	public INode find(String word) {
 		// TODO Auto-generated method stub
-		return null;
+		return root.findNode(word);
 	}
 
 	@Override
 	public int getWordCount() {
 		// TODO Auto-generated method stub
-		return 0;
+		return root.countWords();
 	}
 
 	@Override
 	public int getNodeCount() {
 		// TODO Auto-generated method stub
-		return 0;
+		return root.countNodes();
 	}
 	
 	public String toString(){

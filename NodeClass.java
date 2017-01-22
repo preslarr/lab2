@@ -17,7 +17,7 @@ public class NodeClass implements INode {
 	@Override
 	public int getValue() {
 		// TODO Auto-generated method stub
-		return 0;
+		return count;
 	}
 	
 	public void addToNode(String word){
@@ -90,6 +90,51 @@ public class NodeClass implements INode {
 			default: throw new IOException();
 						
 		}
+	}
+	
+	public NodeClass findNode(String word) {
+		if (word.length() == 0){
+			
+			return this;
+		}
+		char letter = word.charAt(0);
+		int noderef = letter - 'a';
+		if (word.length() == 1){
+			if (nodes[noderef] != null){
+				nodes[noderef].findNode("");
+			} else {
+				return null;
+			}
+			
+		} else {
+			if (nodes[noderef] != null){
+				nodes[noderef].findNode(word.substring(1));			
+			} else {
+				return null;
+			}
+		}
+		return null;
+	}
+	
+	public int countWords() {
+		int nodewordcount = 0;
+		if (count > 0) {nodewordcount += 1;}
+		for (int x = 0; x < 26; x += 1){
+			if (nodes[x] != null){
+				nodewordcount = nodewordcount + nodes[x].countWords();
+			}
+		}
+		return nodewordcount;
+	}
+	
+	public int countNodes() {
+		int nodecount = 1;		
+		for (int x = 0; x < 26; x += 1){
+			if (nodes[x] != null){
+				nodecount = nodecount+ nodes[x].countNodes();
+			}
+		}
+		return nodecount;
 	}
 
 }

@@ -24,10 +24,13 @@ public class SpellCorrector implements ISpellCorrector {
 	@Override
 	public String suggestSimilarWord(String inputWord) throws NoSimilarWordFoundException {
 		// TODO Auto-generated method stub
+		NodeClass inputnode = words.find(inputWord);
 		return null;
 	}
 
 	public String toString(){
 		return words.toString();
 	}
+	
+	
 }

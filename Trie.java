@@ -60,6 +60,14 @@ public class Trie implements ITrie {
 		}
 		final Trie other = (Trie) o;
 		
+		if ( this.getWordCount() != other.getWordCount()){
+			return false;
+		}
+		
+		if (this.getNodeCount() != other.getNodeCount()){
+			return false;
+		}
+		
 		if (this.root.compareNodes(other.root)){
 			return true;
 		} else {

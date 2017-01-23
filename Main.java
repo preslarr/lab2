@@ -26,8 +26,10 @@ public class Main {
 		 */
 		ITrie first = new Trie();
 		ITrie second = new Trie();
-		first.add("a");
-		second.add("a");
+		first.add("cat");
+		first.add("dog");
+		second.add("cat");
+		second.add("dog");
 		if (first.equals(second)){
 			System.out.print("equals");
 		} else {

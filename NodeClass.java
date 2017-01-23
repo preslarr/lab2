@@ -149,5 +149,18 @@ public class NodeClass implements INode {
 		}
 		return;
 	}
+	
+	public boolean compareNodes(NodeClass other){
+		for (int x = 0; x < 26; x += 1){
+			if (this.nodes[x] != null && other.nodes[x] != null){
+				return this.nodes[x].compareNodes(other.nodes[x]);
+			} else if (this.nodes[x] == null && other.nodes[x] == null){
+				
+			} else {
+				return false;
+			}
+		}
+		return true;
+	}
 
 }

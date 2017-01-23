@@ -24,7 +24,15 @@ public class Main {
 		/**
 		 * Create an instance of your corrector here
 		 */
-		
+		ITrie first = new Trie();
+		ITrie second = new Trie();
+		first.add("a");
+		second.add("a");
+		if (first.equals(second)){
+			System.out.print("equals");
+		} else {
+			System.out.print("doesn't equal");
+		}
 		
 		//ISpellCorrector corrector = new SpellCorrector();
 		

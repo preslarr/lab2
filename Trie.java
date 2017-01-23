@@ -54,21 +54,17 @@ public class Trie implements ITrie {
 		if (o == null){
 			return false;
 		}
-		StringBuilder mypathstring = new StringBuilder("");
-		StringBuilder inpathstring = new StringBuilder("");
-		this.root.printPathString(mypathstring);
+		
 		if (!Trie.class.isAssignableFrom(o.getClass())){
 			return false;
 		}
 		final Trie other = (Trie) o;
 		
-		other.root.printPathString(inpathstring);
-		String my = mypathstring.toString();
-		String in = inpathstring.toString();
-		if (my.equals(in)){
+		if (this.root.compareNodes(other.root)){
 			return true;
+		} else {
+			return false;
 		}
-		return false;
 		
 	}
 

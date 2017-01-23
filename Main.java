@@ -30,6 +30,7 @@ public class Main {
 		first.add("dog");
 		second.add("cat");
 		second.add("dog");
+		second.add("dog");
 		if (first.equals(second)){
 			System.out.print("equals");
 		} else {

@@ -33,7 +33,7 @@ public class SpellCorrector implements ISpellCorrector {
 			return inputWord.toLowerCase();
 		} else {
 			SuggestWord wordsuggester = new SuggestWord(words);
-			return wordsuggester.suggest(inputWord);
+			return wordsuggester.suggest(inputWord.toLowerCase());
 		}
 
 	}

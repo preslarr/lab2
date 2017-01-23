@@ -1,6 +1,8 @@
 package spell;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.Scanner;
 
 import spell.ISpellCorrector.NoSimilarWordFoundException;
 
@@ -22,13 +24,16 @@ public class Main {
 		/**
 		 * Create an instance of your corrector here
 		 */
-		ISpellCorrector corrector = new SpellCorrector();
 		
-		corrector.useDictionary(dictionaryFileName);
 		
-		String suggestion = corrector.suggestSimilarWord(inputWord);
+		//ISpellCorrector corrector = new SpellCorrector();
 		
-		System.out.println("Suggestion is: \n" + suggestion);
+		//corrector.useDictionary(dictionaryFileName);
+		
+		//String suggestion = corrector.suggestSimilarWord(inputWord);
+		
+		
+		//System.out.println("Suggestion is: \n" + suggestion);
 	}
 
 }

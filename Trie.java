@@ -3,7 +3,7 @@ package spell;
 import java.io.IOException;
 
 public class Trie implements ITrie {
-	private NodeClass root;
+	public NodeClass root;
 
 	public Trie() {
 		// TODO Auto-generated constructor stub
@@ -43,6 +43,33 @@ public class Trie implements ITrie {
 			e.printStackTrace();
 		}
 		return allwords.toString();
+	}
+	
+	public int hashCode(){
+		int mynum = getWordCount() * getNodeCount();
+		return mynum * 31;
+	}
+	
+	public boolean equals(Object o){
+		if (o == null){
+			return false;
+		}
+		StringBuilder mypathstring = new StringBuilder("");
+		StringBuilder inpathstring = new StringBuilder("");
+		this.root.printPathString(mypathstring);
+		if (!Trie.class.isAssignableFrom(o.getClass())){
+			return false;
+		}
+		final Trie other = (Trie) o;
+		
+		other.root.printPathString(inpathstring);
+		String my = mypathstring.toString();
+		String in = inpathstring.toString();
+		if (my.equals(in)){
+			return true;
+		}
+		return false;
+		
 	}
 
 }

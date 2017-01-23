@@ -139,5 +139,15 @@ public class NodeClass implements INode {
 		}
 		return nodecount;
 	}
+	
+	public void printPathString(StringBuilder in){
+		in.append(count);
+		for (int x = 0; x < 26; x += 1){
+			if (nodes[x] != null){
+				nodes[x].printPathString(in);
+			}
+		}
+		return;
+	}
 
 }

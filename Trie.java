@@ -17,7 +17,7 @@ public class Trie implements ITrie {
 	}
 
 	@Override
-	public INode find(String word) {
+	public ITrie.INode find(String word) {
 		// TODO Auto-generated method stub
 		return root.findNode(word);
 	}
@@ -46,3 +46,5 @@ public class Trie implements ITrie {
 	}
 
 }
+
+

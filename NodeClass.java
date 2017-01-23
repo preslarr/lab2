@@ -94,26 +94,29 @@ public class NodeClass implements INode {
 	
 	public NodeClass findNode(String word) {
 		if (word.length() == 0){
+			if (count > 0) {
+				return this;
+			} else {
+				return null;
+			}
 			
-			return this;
 		}
 		char letter = word.charAt(0);
 		int noderef = letter - 'a';
 		if (word.length() == 1){
 			if (nodes[noderef] != null){
-				nodes[noderef].findNode("");
+				return nodes[noderef].findNode("");
 			} else {
 				return null;
 			}
 			
 		} else {
 			if (nodes[noderef] != null){
-				nodes[noderef].findNode(word.substring(1));			
+				return nodes[noderef].findNode(word.substring(1));			
 			} else {
 				return null;
 			}
 		}
-		return null;
 	}
 	
 	public int countWords() {
